@@ -17,3 +17,5 @@ puts ""
 
 print "Informe para qual moeda deseja converter(ex: USD para Dólar, EUR para Euro, BTC para Bitcoin): "
 moedaEscolhida = gets.chomp
+
+#criar objeto e seguri com respostas do usuário
