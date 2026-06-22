@@ -14,6 +14,3 @@ class CoinFinder
     response = Net::HTTP.get(uri)
   end
 end
-
-test = CoinFinder.new("usd",20)
-puts test.conversor
