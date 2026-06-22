@@ -7,3 +7,6 @@ class CoinFinder
     @moeda = moeda
     @valor = valor
   end
+
+  def conversor
+    url_string = "https://economia.awesomeapi.com.br/json/last/#{@moeda.upcase}-BRL"
