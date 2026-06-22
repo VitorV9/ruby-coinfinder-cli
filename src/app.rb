@@ -21,4 +21,23 @@ puts ""
 print "Informe para qual moeda deseja converter(ex: USD para Dólar, EUR para Euro, BTC para Bitcoin): "
 moedaEscolhida = gets.chomp
 
-#criar objeto e seguri com respostas do usuário
+motor = CoinFinder.new(moedaEscolhida, valorReal)
+resultado = motor.conversor
+
+if resultado == "===A moeda que você informou é inválida, tente novamente e insira uma moeda válida==="
+  puts "Erro! Essa moeda não existe."
+else
+  puts "O valor convertido é: #{resultado}"
+
+  nova_conversao = {
+    moeda: moedaEscolhida.upcase,
+    valor_original: valorReal,
+    resultado_convertido: resultado,
+    data: Time.now.strftime("%Y-%m-%d %H:%M:%S")
+  }
+
+  salvador = FileSaver.new("src/historico.json")
+  salvador.salvar(nova_conversao)
+  
+  puts "Conversão salva no histórico com sucesso!"
+end
