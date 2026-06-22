@@ -18,7 +18,7 @@ class CoinFinder
     chave_mae = "#{@moeda.upcase}BRL"
     
     if dadosbrutos_api[chave_mae].nil?
-    return puts "===A moeda que você informou é inválida, tente novamente e insira uma moeda válida===" 
+    return "moeda_invalida" 
     else
     preco_texto = dadosbrutos_api[chave_mae]["bid"]
     preco_texto = preco_texto.to_f
