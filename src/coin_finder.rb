@@ -16,8 +16,13 @@ class CoinFinder
     dadosbrutos_api = JSON.parse(response)
 
     chave_mae = "#{@moeda.upcase}BRL"
+    
+    if dadosbrutos_api[chave_mae].nil?
+    return puts "===A moeda que você informou é inválida, tente novamente e insira uma moeda válida===" 
+    else
     preco_texto = dadosbrutos_api[chave_mae]["bid"]
     preco_texto = preco_texto.to_f
     resultado = (@valor / preco_texto).round (2)
+    end
   end
 end
