@@ -10,3 +10,10 @@ class CoinFinder
 
   def conversor
     url_string = "https://economia.awesomeapi.com.br/json/last/#{@moeda.upcase}-BRL"
+    uri = URI(url_string)
+    response = Net::HTTP.get(uri)
+  end
+end
+
+test = CoinFinder.new("usd",20)
+puts test.conversor
