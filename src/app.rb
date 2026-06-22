@@ -8,6 +8,11 @@ puts ""
 print "Informe o valor: "
 valorReal = gets.chomp.to_f
 
+while valorReal <= 0
+    print "Erro, informe um valor maior que zero (ex: 0.01): "
+    valorReal = gets.chomp.to_f
+end
+
 puts ""
 
 print "Informe para qual moeda deseja converter(ex: USD para Dólar, EUR para Euro, BTC para Bitcoin): "
