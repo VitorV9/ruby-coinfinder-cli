@@ -23,3 +23,23 @@ moedaEscolhida = gets.chomp
 
 motor = CoinFinder.new(moedaEscolhida, valorReal)
 resultado = motor.conversor
+
+if resultado == "moeda_invalida"
+  puts "Erro! Essa moeda não existe."
+else
+  puts ""
+  puts "O valor convertido é: #{resultado}"
+
+  nova_conversao = {
+    moeda: moedaEscolhida.upcase,
+    valor_original: valorReal,
+    resultado_convertido: resultado,
+    data: Time.now.strftime("%Y-%m-%d %H:%M:%S")
+  }
+  salvador = FileSaver.new("src/historico.json")
+  salvador.salvar(nova_conversao)
+  
+  puts ""
+  puts "===Arquivo de resultado gerado com sucesso!!==="
+  puts ""
+end
