@@ -1,3 +1,6 @@
+require_relative "coin_finder.rb"
+require_relative "file_saver.rb"
+
 puts ""
 puts "====CONVERSOR DE MOEDA CLI===="
 puts ""
