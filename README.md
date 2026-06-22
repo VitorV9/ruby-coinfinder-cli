@@ -1,14 +1,14 @@
 Markdown
-# 🚀 Nome do Projeto
+# 🚀 Conversor de moeda CLI em Ruby
 
-Uma frase curta explicando o que este projeto faz (ex: "Script em Ruby para ler e processar dados de um arquivo").
+Conversor de moedas CLI em Ruby com consumo de API externa em tempo real e salvamento local de histórico em JSON.
 
 ---
 
 ## 🛠️ Tecnologias
 
 * **Linguagem:** Ruby
-* **Dependências:** Bundler e a biblioteca `dotenv`
+* **Dependências:** Bundler, biblioteca uri, biblioteca json e biblioteca nativa do ruby net/http
 
 ---
 
@@ -18,5 +18,5 @@ Siga os comandos abaixo no seu terminal para testar o projeto:
 
 ### 1. Clonar o projeto e entrar na pasta
 ```bash
-git clone [https://github.com/VitorV9/ruby-template.git](https://github.com/VitorV9/ruby-template.git)
-cd ruby-template
+git clone (https://github.com/VitorV9/ruby-coinfinder-cli.git)
+cd ruby-coinfinder-cli
