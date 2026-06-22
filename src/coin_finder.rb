@@ -12,5 +12,12 @@ class CoinFinder
     url_string = "https://economia.awesomeapi.com.br/json/last/#{@moeda.upcase}-BRL"
     uri = URI(url_string)
     response = Net::HTTP.get(uri)
+
+    dadosbrutos_api = JSON.parse(response)
+
+    chave_mae = "#{@moeda.upcase}BRL"
+    preco_texto = dadosbrutos_api[chave_mae]["bid"]
+    preco_texto = preco_texto.to_f
+    resultado = (@valor / preco_texto).round (2)
   end
 end
